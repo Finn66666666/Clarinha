@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu Te Amo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .love {
+            font-size: 24px;
+            color: #e74c3c;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .pulsar {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); color: #e91e63; }
+            50% { transform: scale(1.2); color: #ff69b4; }
+            100% { transform: scale(1); color: #e91e63; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Eu Te Amo!</h1>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <div class="love">Eu te amo!</div>
+    <audio id="bg-music" loop>
+        <source src="alianca.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+    <script>
+        const loves = document.querySelectorAll('.love');
+        const audio = document.getElementById('bg-music');
+        loves.forEach(love => {
+            love.addEventListener('click', () => {
+                love.classList.toggle('pulsar');
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
